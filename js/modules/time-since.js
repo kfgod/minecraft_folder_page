@@ -54,7 +54,7 @@ export class TimeSinceManager {
     }
 
     buildTemplate() {
-        const { last_drop, last_major, last_block, last_item, last_mob, last_advancement, last_biome, last_painting, last_effect, last_mob_variant } = this.state.timeSinceData || {};
+        const { last_drop, last_major, last_block, last_item, last_mob, last_advancement, last_biome, last_painting, last_effect, last_enchantment, last_mob_variant } = this.state.timeSinceData || {};
 
         return `
             <div class="time-since-container">
@@ -73,6 +73,7 @@ export class TimeSinceManager {
                     ${last_biome ? this.buildContentCard('biome', last_biome) : ''}
                     ${last_painting ? this.buildContentCard('painting', last_painting) : ''}
                     ${last_effect ? this.buildContentCard('effect', last_effect) : ''}
+                    ${last_enchantment ? this.buildContentCard('enchantment', last_enchantment) : ''}
                 </div>
             </div>
         `;
@@ -129,7 +130,8 @@ export class TimeSinceManager {
             'advancement': 'Advancement',
             'biome': 'Biome',
             'painting': 'Painting',
-            'effect': 'Effect'
+            'effect': 'Effect',
+            'enchantment': 'Enchantment'
         };
         const typeLabel = typeLabels[type] || type;
         const typeClass = `time-since-card--${type}`;

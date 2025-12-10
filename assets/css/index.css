@@ -1022,6 +1022,10 @@ a.time-since-card:visited {
     color: #00BCD4;
 }
 
+.time-since-card--enchantment .time-since-card__title {
+    color: #9C27B0;
+}
+
 .time-since-card__name {
     font-size: 1.2rem;
     font-weight: 500;
